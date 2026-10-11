@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Loading Screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg" id="bg">
+    <div class="bg-layer"></div>
+    <div class="bg-layer"></div>
+</div>
+<div id="videoContainer"></div>
+<div class="scrim"></div>
+<div class="edge edge-top"></div>
+<div class="edge edge-bottom"></div>
+
+<audio id="audio"></audio>
+
+<div class="frame">
+    <header class="top">
+        <div class="brand-mini reveal" style="--d: 0.1s">
+            <img id="logoImage" alt="">
+            <div class="brand-mini-text">
+                <span class="brand-mini-name" id="brandMini"></span>
+                <span class="brand-mini-sub" id="brandSub"></span>
+            </div>
+        </div>
+        <div class="slide-meter reveal" style="--d: 0.25s" id="slideMeter">
+            <span class="slide-num" id="slideIndex">01</span>
+            <div class="slide-track"><i id="slideFill"></i></div>
+            <span class="slide-num slide-num-dim" id="slideTotal">01</span>
+        </div>
+    </header>
+
+    <main class="stage">
+        <section class="hero" id="hero">
+            <p class="eyebrow reveal" style="--d: 0.35s">
+                <span id="announcementText"></span>
+            </p>
+            <h1 class="title" id="brandingTitle"></h1>
+            <p class="tip reveal" style="--d: 0.9s" id="tipText"></p>
+        </section>
+
+        <aside class="team reveal" style="--d: 0.6s" id="team">
+            <div class="team-head">
+                <h2 id="teamTitle"></h2>
+                <span class="team-count" id="teamCount"></span>
+            </div>
+            <p class="team-sub" id="teamSubtitle"></p>
+            <ul class="team-list" id="teamList"></ul>
+            <div class="team-pages" id="teamPages"></div>
+        </aside>
+    </main>
+
+    <footer class="dock">
+        <div class="player reveal" style="--d: 1.05s" id="player">
+            <div class="disc" id="disc">
+                <img class="disc-cover" id="discCover" alt="">
+                <span class="eq"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="player-main">
+                <div class="player-top">
+                    <div class="track">
+                        <span class="track-label" id="trackLabel"></span>
+                        <span class="track-name" id="songTitle"></span>
+                        <span class="track-artist" id="artistName"></span>
+                    </div>
+                    <div class="player-controls">
+                        <button class="icon-btn icon-btn-ghost" id="prevBtn" type="button" aria-label="Önceki"></button>
+                        <button class="icon-btn" id="playPauseBtn" type="button" aria-label="Oynat / Duraklat"></button>
+                        <button class="icon-btn icon-btn-ghost" id="nextBtn" type="button" aria-label="Sonraki"></button>
+                    </div>
+                </div>
+                <div class="seek">
+                    <span class="seek-time" id="timeNow">0:00</span>
+                    <div class="seek-track" id="seekTrack"><i id="seekFill"></i></div>
+                    <span class="seek-time" id="timeTotal">0:00</span>
+                </div>
+                <div class="player-volume">
+                    <button class="icon-btn icon-btn-ghost icon-btn-small" id="muteBtn" type="button" aria-label="Sesi kapat"></button>
+                    <input type="range" min="0" max="100" step="1" value="30" class="volume" id="volumeSlider" aria-label="Ses">
+                    <span class="volume-text" id="volumeText">30</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="loader reveal" style="--d: 1.15s">
+            <div class="loader-row">
+                <span class="loader-text" id="loadingText"></span>
+                <span class="loader-percent"><b id="loadingPercent">0</b><i>%</i></span>
+            </div>
+            <div class="bar">
+                <div class="bar-fill" id="barFill"><span class="bar-head"></span></div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
